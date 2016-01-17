@@ -1,0 +1,11 @@
+{
+  "name": "unlim",
+  "dependencies": {
+    "requirejs": "~2.1.5",
+    "jquery": "= 1.11.2",
+    "bootstrap": "~3.3.2",
+    "mustache": "~1.0.0",
+    "requirejs-text": "~2.0.14",
+    "observe-js": "~0.5.7"
+  }
+}

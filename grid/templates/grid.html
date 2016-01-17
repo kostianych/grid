@@ -1,0 +1,14 @@
+<table class="pomodoro-table table bordered">
+	<thead>
+		<tr>		
+			{{#headers}}				
+				<th class="{{style}}">{{name}}</th>				
+			{{/headers}}
+		</tr>
+	</thead>
+	<tbody>
+		{{#data}}
+			{{{printRow}}}
+		{{/data}}
+	</tbody>
+</table>
