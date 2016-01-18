@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: 'app',
+    basePath: '',
 
 
     // frameworks to use
@@ -15,10 +15,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test-main.js',
-      {pattern: 'grid/**/*.js', included: false},
-      {pattern: 'grid/**/*.html', included: false},
-      {pattern: '../bower_components/**/*.js', included: false}
+      'app/test-main.js',
+      {pattern: 'app/grid/**/*.js', included: false},
+      {pattern: 'app/grid/**/*.html', included: false},
+      {pattern: 'bower_components/**/*.js', included: false}
     ],
 
 

@@ -24,12 +24,12 @@ require.config({
 
     paths: {      
       "jquery": "bower_components/jquery/dist/jquery",
-      "bootstrap": "../bower_components/bootstrap/dist/js/bootstrap",
-      "mustache": "../bower_components/mustache/mustache",
-      "text": "../bower_components/requirejs-text/text",
-      "observejs": "../bower_components/observe-js/src/observe",      
+      "bootstrap": "bower_components/bootstrap/dist/js/bootstrap",
+      "mustache": "bower_components/mustache/mustache",
+      "text": "bower_components/requirejs-text/text",
+      "observejs": "bower_components/observe-js/src/observe",      
       // Custom
-      "myGrid": "grid/grid"      
+      "myGrid": "app/grid/grid"      
     }
 
 });
