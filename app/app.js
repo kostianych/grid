@@ -1,15 +1,10 @@
-define(['jquery', 'observejs', 'myGrid', 'css!app/app'], function($, observe, Grid) {
+define(['jquery', 'observejs', 'myGrid', 'text!app/templates/pomodoros.html','text!app/templates/action.html', 'css!app/app'], 
+    function($, observe, Grid, pomodorosTemplate, actionTemplate) {
 
     $(document).ready( function() {
 
-        var pomodorosTemplate = '{{#model}}<img class="pomodoro-image" src="images/pomodoro_{{state}}.png"/>{{/model}}';
 
-        var actionTemplate = '<a class="delete" href="#">Delete</a>';        
-
-
-        $.get("data.json", function(data) {
-
-        }).done(function(data) {
+        $.get("data.json").done(function(data) {
             
             var grid = new Grid({
                 renderTo: $('body'),
