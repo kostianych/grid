@@ -4,7 +4,10 @@
  * @module grid 
  *
  */
-define(["jquery", "mustache", 'text!app/grid/templates/grid.html', 'text!app/grid/templates/row.html', 'text!app/grid/templates/cell.html'], 
+define(["jquery", "mustache", 'text!app/grid/templates/grid.html', 
+	                          'text!app/grid/templates/row.html', 
+	                          'text!app/grid/templates/cell.html',
+	                          'css!app/grid/styles/grid'], 
 	function($, Mustache, template, rowTemplate, cellTemplate) {
 
 	/**

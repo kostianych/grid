@@ -27,6 +27,7 @@ require.config({
       "bootstrap": "bower_components/bootstrap/dist/js/bootstrap",
       "mustache": "bower_components/mustache/mustache",
       "text": "bower_components/requirejs-text/text",
+      "css": 'bower_components/require-css/css',
       "observejs": "bower_components/observe-js/src/observe",      
       // Custom
       "myGrid": "app/grid/grid"      

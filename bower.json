@@ -6,6 +6,7 @@
     "bootstrap": "~3.3.2",
     "mustache": "~1.0.0",
     "requirejs-text": "~2.0.14",
-    "observe-js": "~0.5.7"
+    "observe-js": "~0.5.7",
+    "require-css": "~0.1.8"
   }
 }
