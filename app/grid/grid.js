@@ -4,7 +4,7 @@
  * @module grid 
  *
  */
-define(["jquery", "mustache", 'text!app/grid/templates/grid.html', 
+define(['jquery', 'mustache', 'text!app/grid/templates/grid.html', 
 	                          'text!app/grid/templates/row.html', 
 	                          'text!app/grid/templates/cell.html',
 	                          'css!app/grid/styles/grid'], 
@@ -15,9 +15,10 @@ define(["jquery", "mustache", 'text!app/grid/templates/grid.html',
 	 *
 	 * @class
 	 *
-	 * @param {Object}   config - component`s configuration object.	 
+	 * @param {Object}   config - component`s configuration object.
 	 * @param {Object}   config.renderTo - render to this element (jquery)
-	 * @param {Object[]} config.headers - grid headers.	 
+	 * @param {Object}   config.cls - class applied to root element (<table>)
+	 * @param {Object[]} config.headers - grid headers
 	 * @param {string}   config.headers.name - displayed column name
 	 * @param {string}   config.headers.cellTemplate - template for cells of column
 	 * @param {string}   config.headers.field - name of field from data object (key in row object)
@@ -31,7 +32,7 @@ define(["jquery", "mustache", 'text!app/grid/templates/grid.html',
 		this._nullRecord = {};
 		$.each(me.config.headers, function(key, headerObj) {
 			me._nullRecord[headerObj.field] = null;			
-		})
+		});
 		 
 		if (!this.config.data) {
 			this.config.data = [this._nullRecord];
@@ -90,7 +91,7 @@ define(["jquery", "mustache", 'text!app/grid/templates/grid.html',
 			return Mustache.render(rowTemplate, rowModel);			
 		};
 
-	};	
+	}	
 
 	Grid.prototype = {
 
@@ -152,7 +153,7 @@ define(["jquery", "mustache", 'text!app/grid/templates/grid.html',
 		 * @public
 		 */
 		setData: function(data) {
-			if (data.length == 0) {
+			if (data.length === 0) {
 				this.config.data = [this._nullRecord];
 			} else {
 				this.config.data = data;

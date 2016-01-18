@@ -45,13 +45,13 @@ module.exports = function(grunt) {
         options: {
           jshintrc: 'app/.jshintrc'
         },
-        src: ['app/**/*.js']
+        src: ['app/**/*.js', '!app/**/*_test.js']        
       },
       test: {
         options: {
-          jshintrc: 'test/.jshintrc'
+          jshintrc: 'app/.jshintrc'
         },
-        src: ['test/**/*.js']
+        src: ['app/**/*_test.js']
       }
     },
     watch: {
