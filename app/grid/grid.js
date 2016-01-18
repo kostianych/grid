@@ -141,7 +141,7 @@ define(["jquery", "mustache", 'text!app/grid/templates/grid.html',
 		 */
 		clear: function() {
 			this.config.data = [this._nullRecord];
-			this.rerender();
+			this._rerender();
 		},
 
 		/**
@@ -158,6 +158,18 @@ define(["jquery", "mustache", 'text!app/grid/templates/grid.html',
 				this.config.data = data;
 			}
 			this._rerender();
+		},
+
+		/**
+		 * Remove element from DOM
+		 *
+		 * @public
+		 */
+		destroy: function() {
+			// if data were set
+			if (this.el) {
+				this.el.remove();
+			}
 		},
 
 		_getRows: function() {
@@ -180,7 +192,7 @@ define(["jquery", "mustache", 'text!app/grid/templates/grid.html',
 		},
 
 		_rerender: function() {
-			this.el.remove();
+			this.destroy();
 			this._activeRow = null;
 			this.render();
 		},
