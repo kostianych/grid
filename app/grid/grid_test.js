@@ -4,52 +4,40 @@ define(['myGrid', 'jquery'], function(Grid, $) {
         var columnName = 'num';
         var grid = null;
 
-        afterEach(function() {
-            grid.destroy();
-            grid = null;
-        });
-
-        it('test grid render', function() {            
-            
+        beforeEach(function() {
             grid = new Grid({
                headers: [{name: columnName, field: 'id'}],
                data: [{id: 2}],
                renderTo: $('body')                
             });
+        });
+
+        afterEach(function() {
+            grid.destroy();
+            grid = null;
+        });
+
+        it('test grid render', function() {                    
             grid.render();
             
             expect($('th').text()).toEqual(columnName); 
         });   
     
 
-        it('test grid set data', function() {            
-            grid = new Grid({
-               headers: [{name: columnName, field: 'id'}],               
-               renderTo: $('body')                
-            });
+        it('test grid set data', function() {
             grid.setData([{id: 2}]);
             
             expect($('td').text()).toEqual('2'); 
         });   
 
-        it('test grid clear', function() {            
-            grid = new Grid({
-               headers: [{name: columnName, field: 'id'}],              
-               data: [{id: 2}], 
-               renderTo: $('body')                
-            });
+        it('test grid clear', function() {
             grid.clear();
             
             expect($('td').text()).toEqual(""); 
             expect($('td').length).toEqual(1); 
         });   
 
-        it('test grid destroy', function() {            
-            grid = new Grid({
-               headers: [{name: columnName, field: 'id'}],              
-               data: [{id: 2}], 
-               renderTo: $('body')                
-            });
+        it('test grid destroy', function() {
             grid.destroy();
             
             expect($('td').length).toEqual(0); 
