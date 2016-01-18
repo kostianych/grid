@@ -16,7 +16,8 @@ define(['jquery', 'observejs', 'myGrid', 'css!app/app'], function($, observe, Gr
                 headers: [{name: 'Task', style: 'pomodoro-table-task-column', field: 'name'}, 
                           {name: 'Pomodoros', cellTemplate: pomodorosTemplate, field:  'pomodoros'}, 
                           {name: 'Action', cellTemplate: actionTemplate}],
-                data: data
+                data: data,
+                cls: 'pomodoro-table'
             })
             grid.render();
 
