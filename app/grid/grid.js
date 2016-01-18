@@ -96,8 +96,8 @@ define(["jquery", "mustache", 'text!app/grid/templates/grid.html',
 
 		ACTIVE_CLASS: 'active',
 
-		ROWS_LOCATOR: 'tbody > tr',
-		ROW_LOCATOR: 'tr#',
+		ROWS_SELECTOR: 'tbody > tr',
+		ROW_SELECTOR: 'tr#',
 
 		_nullRecord: null,
 
@@ -121,7 +121,7 @@ define(["jquery", "mustache", 'text!app/grid/templates/grid.html',
 				this._activeRow = this._getRows()[0];
 			}
 			if (this._activeRow && this._activeRow.id) {
-				this.el.find(this.ROW_LOCATOR + this._activeRow.id).addClass(this.ACTIVE_CLASS);
+				this.el.find(this.ROW_SELECTOR + this._activeRow.id).addClass(this.ACTIVE_CLASS);
 			}
 		},
 
@@ -161,7 +161,7 @@ define(["jquery", "mustache", 'text!app/grid/templates/grid.html',
 		},
 
 		_getRows: function() {
-			return this.el.find(this.ROWS_LOCATOR);
+			return this.el.find(this.ROWS_SELECTOR);
 		},
 
 		_onRowClick: function(e) {
@@ -176,7 +176,7 @@ define(["jquery", "mustache", 'text!app/grid/templates/grid.html',
 			var trEl = $(tdEl.parentNode);
 			trEl.addClass(this.ACTIVE_CLASS);	
 
-			this._activeRow = row[0];
+			this._activeRow = trEl[0];
 		},
 
 		_rerender: function() {
